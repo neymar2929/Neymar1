@@ -1,0 +1,64 @@
+local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+local Main = Instance.new("Frame", ScreenGui)
+Main.Size = UDim2.new(0, 320, 0, 210)
+Main.Position = UDim2.new(0.5, -160, 0.4, -105)
+Main.BackgroundColor3 = Color3.fromRGB(15, 10, 5)
+Main.BorderSizePixel = 0
+
+local UICorner = Instance.new("UICorner", Main)
+UICorner.CornerRadius = UDim.new(0, 12)
+
+local Inner = Instance.new("Frame", Main)
+Inner.Size = UDim2.new(1, -12, 1, -12)
+Inner.Position = UDim2.new(0, 6, 0, 6)
+Inner.BackgroundColor3 = Color3.fromRGB(255, 110, 0)
+Inner.BorderSizePixel = 0
+Instance.new("UICorner", Inner).CornerRadius = UDim.new(0, 10)
+
+local Title = Instance.new("TextLabel", Inner)
+Title.Size = UDim2.new(1, 0, 0, 40)
+Title.BackgroundTransparency = 1
+Title.Text = "سكربت نيمار"
+Title.Font = Enum.Font.GothamBlack
+Title.TextSize = 28
+Title.TextColor3 = Color3.new(1,1,1)
+
+task.spawn(function()
+	while true do
+		Title.TextColor3 = Color3.fromHSV((tick() * 2) % 1, 1, 1)
+		task.wait(0.03)
+	end
+end)
+
+local NewBtn = Instance.new("TextButton", Inner)
+NewBtn.Size = UDim2.new(1, -20, 0, 48)
+NewBtn.Position = UDim2.new(0, 10, 0, 60)
+NewBtn.Text = "السكربت الجديد"
+NewBtn.Font = Enum.Font.GothamBold
+NewBtn.TextSize = 22
+NewBtn.BackgroundColor3 = Color3.fromRGB(25, 15, 5)
+NewBtn.TextColor3 = Color3.new(1,1,1)
+Instance.new("UICorner", NewBtn).CornerRadius = UDim.new(0, 8)
+
+local OldBtn = Instance.new("TextButton", Inner)
+OldBtn.Size = UDim2.new(1, -20, 0, 48)
+OldBtn.Position = UDim2.new(0, 10, 0, 120)
+OldBtn.Text = "السكربت القديم"
+OldBtn.Font = Enum.Font.GothamBold
+OldBtn.TextSize = 22
+OldBtn.BackgroundColor3 = Color3.fromRGB(25, 15, 5)
+OldBtn.TextColor3 = Color3.new(1,1,1)
+Instance.new("UICorner", OldBtn).CornerRadius = UDim.new(0, 8)
+
+Main.Active = true
+Main.Draggable = true
+
+NewBtn.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/neymar2929/Neymar1/refs/heads/main/Neymar.lua"))()
+end)
+
+OldBtn.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/neymar2929/Neymar/refs/heads/main/ney.lua"))()
+end)
