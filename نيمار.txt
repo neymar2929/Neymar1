@@ -18,7 +18,7 @@ Instance.new("UICorner", Inner).CornerRadius = UDim.new(0, 10)
 local Title = Instance.new("TextLabel", Inner)
 Title.Size = UDim2.new(1, 0, 0, 40)
 Title.BackgroundTransparency = 1
-Title.Text = "سكربت نيمار"
+Title.Text = "سكربت نيمار (تم حل المشاكل)"
 Title.Font = Enum.Font.GothamBlack
 Title.TextSize = 28
 Title.TextColor3 = Color3.new(1,1,1)
@@ -55,7 +55,7 @@ Main.Draggable = true
 
 NewBtn.MouseButton1Click:Connect(function()
     ScreenGui:Destroy()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/neymar2929/Neymar1/refs/heads/main/Neymar.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/neymar2929/Neymar2/refs/heads/main/Ney.lua"))()
 end)
 
 OldBtn.MouseButton1Click:Connect(function()
